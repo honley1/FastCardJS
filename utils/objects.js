@@ -2,7 +2,8 @@ const getBusinessCardObject = (businessCard) => {
     return {
         id: businessCard.id,
         user_id: businessCard.userId,
-        content: businessCard.content,
+        html: businessCard.html,
+        css: businessCard.css,
         isActivated: businessCard.isActivated
     }
 }

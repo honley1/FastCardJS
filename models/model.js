@@ -15,12 +15,14 @@ const Application = sequelize.define('applications', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     full_name: {type: DataTypes.STRING},
     phone_number: {type: DataTypes.STRING, allowNull: true},
-    content: {type: DataTypes.STRING}
+    html: {type: DataTypes.STRING},
+    css: {type: DataTypes.STRING}
 })
 
 const BusinessCard = sequelize.define('business_card', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    content: {type: DataTypes.STRING},
+    html: {type: DataTypes.STRING},
+    css: {type: DataTypes.STRING},
     isActivated: {type: DataTypes.BOOLEAN, unique: false},
 });
 

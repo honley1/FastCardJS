@@ -7,7 +7,7 @@ const logger = require('../utils/logger');
 class ApplicationController {
     async createApplication(req, res) {
         try {
-            const {full_name, phone_number, content} = req.body;
+            const {full_name, phone_number, html, css} = req.body;
 
             const userId = req.user.id
             const username = req.user.username;
@@ -19,10 +19,10 @@ class ApplicationController {
             }
 
             const application = await Application.create({
-                userId, full_name, phone_number, content
+                userId, full_name, phone_number, html, css
             });
             const businessCard = await BusinessCard.create({
-                content: content, isActivated: false
+                html: html, css: css, isActivated: false
             })
 
             logger.info(`Application number ${application.id} was submitted`);
