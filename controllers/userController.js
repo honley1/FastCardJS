@@ -10,9 +10,9 @@ const logger = require('../utils/logger');
 const validateEmail = require('../utils/emailValidation');
 const mailService = require('../utils/mailSender');
 
-const generateJwt = (id, email, avatar, username, isActivated, role) => {
+const generateJwt = (id, email, username, isActivated, role) => {
     return jwt.sign(
-        {id, email, avatar, username, isActivated, role},
+        {id, email, username, isActivated, role},
         process.env.SECRET_KEY,
         {expiresIn: '48h'}
     )
